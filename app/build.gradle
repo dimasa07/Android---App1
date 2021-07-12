@@ -17,13 +17,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+		
+		buildFeatures {
+    dataBinding true
+}
 }
 
 probelytics {
     apikey 'VL-1GM3vQfSHtrsyy93VDgDQPBvY_mR8aErWj7oJo0qg'
 }
-
+ 
 dependencies {
+	
+		api ('android.arch.core:runtime:+'){force=true}
+		api 'com.android.support:appcompat-v7:27.+'
+		
     compile fileTree(dir: 'libs', include: ['*.jar'])
 		implementation 'com.probelytics:support:0.9.+'
+		
 }
